@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUserData, selectUserData } from '../../store/userSlice.js';
 import axios from 'axios';
 
 function RandomUserComponent() {
-  const [userData, setUserData] = useState(null);
+  const dispatch = useDispatch();
+  const userData = useSelector(selectUserData);
 
   const fetchRandomUser = async () => {
     try {
       const response = await axios.get('https://randomuser.me/api/');
-      setUserData(response.data.results[0]);
+      dispatch(setUserData(response.data.results[0]));
     } catch (error) {
       console.error('Error fetching data:', error);
     }
