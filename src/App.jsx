@@ -1,12 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import RandomUserComponent from './components/viewApi/viewApi'
-import CloseApproachData from './components/viewApi/nasaView'
-import CarouselFade from './components/carrusel/carrusel'
-import Tarjeta from './components/ExampleCarouselImage/tarjeta'
 import Tarjeta2 from './components/ExampleCarouselImage/tarjeta2'
+import DrawerLeft from './components/drawer/Drawer'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,14 +12,12 @@ function App() {
 
   return (
     <>
-      <div className={darkMode ? 'dark-mode' : ''}>
-      <button onClick={toggleDarkMode}>
-        Toggle Dark Mode
-      </button>
-      <RandomUserComponent />
+      
+      
+      <DrawerLeft />
    
-      <Tarjeta2 />
-      </div>
+     
+      
     </>
   )
 }
