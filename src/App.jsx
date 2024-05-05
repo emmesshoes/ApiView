@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Tarjeta2 from './components/ExampleCarouselImage/tarjeta2'
-import DrawerLeft from './components/drawer/Drawer'
+import PageHome from './pages/home/Home'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -12,12 +11,7 @@ function App() {
 
   return (
     <>
-      
-      
-      <DrawerLeft />
-   
-     
-      
+      <PageHome />
     </>
   )
 }

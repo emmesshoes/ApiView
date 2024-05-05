@@ -1,20 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import { FaSearch } from "react-icons/fa";
 import { MdHomeFilled } from "react-icons/md";
 import { RiNotificationLine } from "react-icons/ri";
-import { RiNotificationFill } from "react-icons/ri";
 import { CiMail } from "react-icons/ci";
 import { RiFileList2Line } from "react-icons/ri";
 import { PiBookmarkSimpleBold } from "react-icons/pi";
@@ -22,12 +15,17 @@ import { CgProfile } from "react-icons/cg";
 import { CgMoreO } from "react-icons/cg";
 import { TbPremiumRights } from "react-icons/tb";
 import { Container, ListItemIcon, ListItemText } from '@mui/material';
+import { BiFontSize } from 'react-icons/bi';
 
-const drawerWidth = 240;
+
+const drawerWidth = 40;
 
 const sizeIcon = 25;
 
 const menuItems = [
+  
+
+  
   { text: 'Home', icon: <MdHomeFilled  size={35} color='black'/> },
   { text: 'Explore', icon: <FaSearch  size={sizeIcon} color='black'/> },
   { text: 'Notifications', icon: <RiNotificationLine  size={sizeIcon} color='black'/> },
@@ -38,7 +36,7 @@ const menuItems = [
   { text: 'Profile', icon: <CgProfile  size={sizeIcon} color='black'/> },
   { text: 'More', icon: <CgMoreO  size={sizeIcon} color='black'/> }
 ];
-PiBookmarkSimpleBold
+
 
 
 export default function DrawerLeft() {
@@ -48,22 +46,18 @@ export default function DrawerLeft() {
     setValue(newValue);
   };
 
+// Estilo de fuente deseado
+const fontStyles = {
+  fontFamily: 'TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  fontSize: '30px'
+};
 
   return (
-    <Container>
+    <React.Fragment>
       <CssBaseline />
-      <Box sx={{ display: 'flex', gap:'40' }}>
-      <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
-          <Toolbar>
-            <Tabs value={value} onChange={handleChange} centered>
-              <Tab label="Item One" />
-              <Tab label="Item Two" />
-              <Tab label="Item Three" />
-            </Tabs>
-          </Toolbar>
-        </AppBar>
-
-        <Drawer
+      <Container maxWidth="xl">
+      <Box sx={{ display: 'flex', gap:'10' }}>
+        <Box
           sx={{
             width: drawerWidth,
             flexShrink: 0,
@@ -74,12 +68,15 @@ export default function DrawerLeft() {
           }}
           variant="permanent"
           anchor="left"
+          display="flex"
         >
+          
           <Toolbar />
           
-          <List>
+          <List style={{ display: 'flex', flexDirection: 'column' }}>
+            <img src="./X_logo_2023.svg" alt="" width="30px" style={{ marginBottom: '16px', marginLeft: '16px'  }} />
             {menuItems.map((item, index) => (
-              <ListItem key={item.text} disablePadding>
+              <ListItem key={item.text} disablePadding style={{ marginBottom: '16px', fontSize: '20px' }} sx={fontStyles}>
                 <ListItemButton>
                   <ListItemIcon>
                     {item.icon}
@@ -89,22 +86,13 @@ export default function DrawerLeft() {
               </ListItem>
             ))}
           </List>
-          
-        </Drawer>
 
-        <Box
-          component="main"
-          sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-        >
-          <Toolbar />
-          <Typography paragraph>
-            Primero
-          </Typography>
-          <Typography paragraph>
-            Segundo
-          </Typography>
+          
         </Box>
-      </Box>
-    </Container>
+
+        
+        </Box>
+      </Container>
+    </React.Fragment>
   );
 }
