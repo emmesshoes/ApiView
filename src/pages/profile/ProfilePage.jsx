@@ -3,14 +3,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import DrawerLeft from '../drawer/Drawer';
-import UnderlineTabs from '../tabs/Tabs1';
-import { MdOutlineSettings } from 'react-icons/md';
-import CardPersonal from '../cards/CardPersonal';
+import DrawerLeft from '../../components/drawer/Drawer';
+import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-export default function SimpleContainer() {
+export default function ProfilePage() {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -31,8 +29,7 @@ export default function SimpleContainer() {
                 borderRadius="1px"
                 padding="0.1rem "
             >
-                <UnderlineTabs />
-                <MdOutlineSettings size={20} color="black" />
+            <p>ESTO ES LA PAGINA DE PROFILE</p>
             </Box>
             <CardPersonal sx={{ width: '100%' }}/>
           </Grid>
@@ -63,3 +60,6 @@ export default function SimpleContainer() {
     </React.Fragment>
   );
 }
+
+
+

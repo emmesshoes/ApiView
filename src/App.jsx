@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import PageHome from './pages/home/Home'
+import HomePage from './pages/home/HomePage'
+import ProfilePage from './pages/profile/ProfilePage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -11,7 +13,14 @@ function App() {
 
   return (
     <>
-      <PageHome />
+    <BrowserRouter>
+        <Routes>
+          
+          <Route exact path="/" component={HomePage} />
+          <Route path="/profile" component={ProfilePage} /> 
+        </Routes>
+    </BrowserRouter>
+      
     </>
   )
 }

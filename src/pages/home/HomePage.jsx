@@ -3,14 +3,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-import DrawerLeft from '../drawer/Drawer';
-import UnderlineTabs from '../tabs/Tabs1';
+import DrawerLeft from '../../components/drawer/Drawer';
+import UnderlineTabs from '../../components/tabs/Tabs1';
 import { MdOutlineSettings } from 'react-icons/md';
-import CardPersonal from '../cards/CardPersonal';
+import CardPersonal from '../../components/cards/CardPersonal';
 import { InputAdornment, TextField } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-export default function SimpleContainer() {
+export default function HomePage() {
   return (
     <React.Fragment>
       <CssBaseline />
@@ -63,3 +63,6 @@ export default function SimpleContainer() {
     </React.Fragment>
   );
 }
+
+
+
